@@ -59,7 +59,7 @@ export default function SignUp() {
 			await signUp(data.email, data.password);
 			router.push({
 				pathname: "/verify",
-				params: { email: data.email },
+        params: { email: encodeURIComponent(data.email) },
 			});
 		} catch (error: Error | any) {
 			alertRef.current?.showAlert({
